@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import Blog from "../models/blogModel";
+
 import Category from "../models/categoryModel";
+import Blog from "../models/blogModel";
 
 interface User {
   role: string;
@@ -45,12 +46,12 @@ export const createBlog = async (req: CustomRequest, res: Response) => {
   }
 };
 
-export const getAllBlogs = async (req: Request, res: Response) => {
+export const getAllBlogs = async (_req: Request, res: Response) => {
   try {
-    const query = req.query;
 
-    const blogs = await Blog.find(query);
-
+    const blogs = await Blog.find()
+    .populate({ path: "author", select: "name" }) // Populate author name
+    .populate({ path: "categories", select: "category_name" })
     return res.status(200).json({
       success: true,
       data: blogs,

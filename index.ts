@@ -8,6 +8,7 @@ import farmRequestRouter from "./routes/farmerRequestRoute";
 import dotenv from 'dotenv'
 import categoryRouter from './routes/categoryRoutes';
 import productsRouter from './routes/productsRoutes';
+import blogRouter from "./routes/blogRoutes";
 
 dotenv.config()
 
@@ -34,6 +35,8 @@ app.use('/api/v1', authrRouter)
 app.use('/api/v1', farmRequestRouter)
 app.use('/api/v1', categoryRouter)
 app.use('/api/v1', productsRouter)
+app.use('/api/v1', blogRouter)
+
 
 
 
