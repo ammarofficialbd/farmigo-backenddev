@@ -3,7 +3,7 @@ import { authMiddleware2 } from './../middleware/authMiddleware';
 import express from "express";
 
 import roleMiddleware from "../middleware/roleMiddleweare";
-import { createBlog, getAllBlogs } from '../controllers/blogController';
+import { createBlog, getAllBlogs, updateBlog, deleteBlog } from '../controllers/blogController';
 
 
 
