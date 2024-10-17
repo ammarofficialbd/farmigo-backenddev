@@ -14,7 +14,7 @@ interface CustomRequest extends Request {
 
 export const createBlog = async (req: CustomRequest, res: Response) => {
   try {
-    const { title, content, categories } = req.body;
+    const { title, content, categories, author} = req.body;
 
     const categoryDocs = await Category.find({
       category_name: { $in: categories },
@@ -32,7 +32,7 @@ export const createBlog = async (req: CustomRequest, res: Response) => {
     const blog = new Blog({
       title,
       content,
-      author: req.user?.id,
+      author,
       categories: categoryIds,
     });
 
