@@ -10,7 +10,7 @@ import { createBlog, getAllBlogs, updateBlog, deleteBlog } from '../controllers/
 const blogRouter = express.Router();
 // create blog
 blogRouter.post("/blog/create", createBlog);
-blogRouter.put("/blog/update", updateBlog);
+blogRouter.put("/blog/update/:id", updateBlog);
 blogRouter.delete("/blog/delete/:id", deleteBlog);
 // get all blogs data from database
 blogRouter.get("/blogs", getAllBlogs );
