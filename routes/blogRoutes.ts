@@ -11,7 +11,7 @@ const blogRouter = express.Router();
 // create blog
 blogRouter.post("/blog/create", createBlog);
 blogRouter.put("/blog/update", updateBlog);
-blogRouter.delete("/blog/delete", deleteBlog);
+blogRouter.delete("/blog/delete/:id", deleteBlog);
 // get all blogs data from database
 blogRouter.get("/blogs", getAllBlogs );
 
