@@ -181,3 +181,12 @@ export const logOut =  async(_req: Request, res: Response) => {
   res.header('auth_token', '')
   res.json({ msg: 'Logged out successfully' });
 };
+//get all users
+export const getAllUsers = async (req:Request, res:Response) => {
+  try {
+      const users = await User.find().select('name profilePic email role');
+      res.status(200).json(users);
+  } catch (error) {
+      res.status(500).json({ message: 'Error fetching users', error });
+  }
+};
