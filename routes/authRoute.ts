@@ -19,7 +19,7 @@ authrRouter.post("/login", loginUser);
 authrRouter.get("/logout", authMiddleware2, logOut);
 authrRouter.post("/google-auth", googleAuth);
 
-authrRouter.get("users/get-users", getAllUsers);
+authrRouter.get("/users/get-users", getAllUsers);
 // Get user profile
 authrRouter.get("/profile",authMiddleware2, getUserProfile);
 
