@@ -7,6 +7,7 @@ import {
   loginUser,
   registerUser,
   updateUserProfile,
+  getAllUsers
 } from "../controllers/authController";
 import { authMiddleware2 } from "../middleware/authMiddleware";
 
@@ -18,7 +19,7 @@ authrRouter.post("/login", loginUser);
 authrRouter.get("/logout", authMiddleware2, logOut);
 authrRouter.post("/google-auth", googleAuth);
 
-
+authrRouter.get(/get-users', getAllUsers);
 // Get user profile
 authrRouter.get("/profile",authMiddleware2, getUserProfile);
 
